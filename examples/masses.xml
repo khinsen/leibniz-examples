@@ -1,0 +1,292 @@
+<context-collection>
+  <context id="mass">
+    <includes>
+      <context-ref>builtins/real-numbers</context-ref>
+    </includes>
+    <sorts>
+      <sort id="mass" />
+      <sort id="ℝp" />
+    </sorts>
+    <subsorts />
+    <vars>
+      <var id="F2" sort="ℝp" />
+      <var id="F1" sort="ℝp" />
+      <var id="F" sort="ℝp" />
+      <var id="M2" sort="mass" />
+      <var id="M1" sort="mass" />
+      <var id="M" sort="mass" />
+    </vars>
+    <ops>
+      <op id="_+">
+        <arity>
+          <sort id="mass" />
+          <sort id="mass" />
+        </arity>
+        <sort id="mass" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="ℝp" />
+          <sort id="mass" />
+        </arity>
+        <sort id="mass" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="mass" />
+          <sort id="ℝp" />
+        </arity>
+        <sort id="mass" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="mass" />
+          <sort id="mass" />
+        </arity>
+        <sort id="ℝp" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_+">
+            <term op="_×">
+              <term op="F1" />
+              <term op="M" />
+            </term>
+            <term op="_×">
+              <term op="F2" />
+              <term op="M" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_+">
+              <term op="F1" />
+              <term op="F2" />
+            </term>
+            <term op="M" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_×">
+            <term op="F1" />
+            <term op="_×">
+              <term op="F2" />
+              <term op="M" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_×">
+              <term op="F1" />
+              <term op="F2" />
+            </term>
+            <term op="M" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_÷">
+            <term op="M" />
+            <term op="F" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_÷">
+              <integer value="1" />
+              <term op="F" />
+            </term>
+            <term op="M" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_÷">
+            <term op="M1" />
+            <term op="_×">
+              <term op="F" />
+              <term op="M2" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_÷">
+            <term op="_÷">
+              <term op="M1" />
+              <term op="F" />
+            </term>
+            <term op="M2" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_÷">
+            <term op="_×">
+              <term op="F" />
+              <term op="M1" />
+            </term>
+            <term op="M2" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="F" />
+            <term op="_÷">
+              <term op="M1" />
+              <term op="M2" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_÷">
+            <term op="M" />
+            <term op="M" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <integer value="1" />
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+  <context id="mass-units">
+    <includes>
+      <context-ref>mass</context-ref>
+      <context-ref>boolean/boolean</context-ref>
+    </includes>
+    <sorts>
+      <sort id="mass-unit" />
+      <sort id="mass" />
+    </sorts>
+    <subsorts>
+      <subsort subsort="mass-unit" supersort="mass" />
+    </subsorts>
+    <vars>
+      <var id="MU2" sort="mass-unit" />
+      <var id="MU1" sort="mass-unit" />
+      <var id="MU" sort="mass-unit" />
+    </vars>
+    <ops>
+      <op id="kg">
+        <arity />
+        <sort id="mass-unit" />
+      </op>
+      <op id="g">
+        <arity />
+        <sort id="mass-unit" />
+      </op>
+      <op id="mg">
+        <arity />
+        <sort id="mass-unit" />
+      </op>
+      <op id="_in">
+        <arity>
+          <sort id="mass" />
+          <sort id="mass-unit" />
+        </arity>
+        <sort id="mass" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_÷">
+            <term op="g" />
+            <term op="kg" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <rational value="1/1000" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_÷">
+            <term op="mg" />
+            <term op="kg" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <rational value="1/1000000" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_in">
+            <term op="M" />
+            <term op="MU" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_÷">
+              <term op="M" />
+              <term op="MU" />
+            </term>
+            <term op="MU" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="_÷">
+            <term op="MU1" />
+            <term op="MU2" />
+          </term>
+        </pattern>
+        <condition>
+          <term op="¬">
+            <term op="_==">
+              <term op="MU2" />
+              <term op="kg" />
+            </term>
+          </term>
+        </condition>
+        <replacement>
+          <term op="_÷">
+            <term op="_÷">
+              <term op="MU1" />
+              <term op="kg" />
+            </term>
+            <term op="_÷">
+              <term op="MU2" />
+              <term op="kg" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+</context-collection>
