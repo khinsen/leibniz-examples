@@ -1,0 +1,222 @@
+<context-collection>
+  <context id="heron">
+    <includes>
+      <context-ref>builtins/real-numbers</context-ref>
+    </includes>
+    <sorts>
+      <sort id="ℝnn" />
+    </sorts>
+    <subsorts />
+    <vars>
+      <var id="e" sort="ℝnn" />
+      <var id="ε" sort="ℝp" />
+      <var id="x" sort="ℝnn" />
+    </vars>
+    <ops>
+      <op id="heron">
+        <arity>
+          <var id="x" sort="ℝnn" />
+          <var id="ε" sort="ℝp" />
+          <var id="e" sort="ℝnn" />
+        </arity>
+        <sort id="ℝnn" />
+      </op>
+      <op id="heron">
+        <arity>
+          <var id="x" sort="ℝnn" />
+          <var id="ε" sort="ℝp" />
+        </arity>
+        <sort id="ℝnn" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+            <term op="e" />
+          </term>
+        </pattern>
+        <condition>
+          <term op="_&lt;">
+            <term op="abs">
+              <term op="_-">
+                <term op="x" />
+                <term op="^">
+                  <term op="e" />
+                  <integer value="2" />
+                </term>
+              </term>
+            </term>
+            <term op="ε" />
+          </term>
+        </condition>
+        <replacement>
+          <term op="e" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+            <term op="e" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+            <term op="_×">
+              <rational value="1/2" />
+              <term op="_+">
+                <term op="e" />
+                <term op="_÷">
+                  <term op="x" />
+                  <term op="e" />
+                </term>
+              </term>
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+            <integer value="1" />
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+  <context id="fp-heron">
+    <includes>
+      <context-ref>builtins/IEEE-floating-point-with-conversion</context-ref>
+      <context-ref>builtins/real-numbers</context-ref>
+    </includes>
+    <sorts />
+    <subsorts />
+    <vars>
+      <var id="ε" sort="FP64" />
+      <var id="x" sort="FP64" />
+      <var id="e" sort="FP64" />
+    </vars>
+    <ops>
+      <op id="heron">
+        <arity>
+          <sort id="FP64" />
+          <sort id="FP64" />
+        </arity>
+        <sort id="FP64" />
+      </op>
+      <op id="heron">
+        <arity>
+          <sort id="FP64" />
+          <sort id="FP64" />
+          <sort id="FP64" />
+        </arity>
+        <sort id="FP64" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars>
+          <var id="x" sort="FP64" />
+          <var id="e" sort="FP64" />
+          <var id="ε" sort="FP64" />
+        </vars>
+        <pattern>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+            <term op="e" />
+          </term>
+        </pattern>
+        <condition>
+          <term op="_&lt;">
+            <term op="abs">
+              <term op="_-">
+                <term op="x" />
+                <term op="^">
+                  <term op="e" />
+                  <integer value="2" />
+                </term>
+              </term>
+            </term>
+            <term op="ε" />
+          </term>
+        </condition>
+        <replacement>
+          <term op="e" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="FP64" />
+          <var id="e" sort="FP64" />
+          <var id="ε" sort="FP64" />
+        </vars>
+        <pattern>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+            <term op="e" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+            <term op="_×">
+              <floating-point value="0.5" />
+              <term op="_+">
+                <term op="e" />
+                <term op="_÷">
+                  <term op="x" />
+                  <term op="e" />
+                </term>
+              </term>
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="FP64" />
+          <var id="ε" sort="FP64" />
+        </vars>
+        <pattern>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="heron">
+            <term op="x" />
+            <term op="ε" />
+            <integer value="1.0" />
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+</context-collection>
