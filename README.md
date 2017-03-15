@@ -10,4 +10,4 @@ All content in this repository is published under the [Creative Commons Attribut
 
 ## List of examples
 
- - Heron's algorithm for computing square roots: [HTML](examples/heron.html), [XML](examples/heron.xml), [source code](examples/heron.rkt).
+ - Heron's algorithm for computing square roots: [HTML](examples/heron.html), [XML](examples/heron.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/heron.rkt).
