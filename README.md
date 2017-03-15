@@ -1,4 +1,4 @@
-![<Lᵉ>](https://github.com/khinsen/leibniz/raw/master/logo/horizontal-leibniz-logo-500-x-150-png.png)
+![Leibniz logo](https://github.com/khinsen/leibniz/raw/master/logo/horizontal-leibniz-logo-500-x-150-png.png)
 
 ## Leibniz example documents
 
