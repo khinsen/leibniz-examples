@@ -21,3 +21,4 @@ Each example also contains a link to an XML version, which contains just the def
 
  - [Heron's algorithm](examples/heron.html) for computing square roots ([XML](examples/heron.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/heron.rkt))
  - [Masses and mass units](examples/masses.html) ([XML](examples/masses.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/masses.rkt))
+- A more general [framework for physical quantities](examples/quantities.html) ([XML](examples/quantities.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/quantities.rkt))
