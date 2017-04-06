@@ -1,0 +1,235 @@
+<context-collection>
+  <context id="boolean">
+    <includes>
+      <context-ref>builtins/truth</context-ref>
+    </includes>
+    <sorts>
+      <sort id="boolean" />
+    </sorts>
+    <subsorts />
+    <vars />
+    <ops>
+      <op id="¬">
+        <arity>
+          <sort id="boolean" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_∧">
+        <arity>
+          <sort id="boolean" />
+          <sort id="boolean" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_⊻">
+        <arity>
+          <sort id="boolean" />
+          <sort id="boolean" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_∨">
+        <arity>
+          <sort id="boolean" />
+          <sort id="boolean" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="¬">
+            <term-or-var name="X" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_⊻">
+            <term-or-var name="true" />
+            <term-or-var name="X" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+          <var id="Y" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_∨">
+            <term-or-var name="X" />
+            <term-or-var name="Y" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_⊻">
+            <term-or-var name="X" />
+            <term op="_⊻">
+              <term-or-var name="Y" />
+              <term op="_∧">
+                <term-or-var name="X" />
+                <term-or-var name="Y" />
+              </term>
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_∧">
+            <term-or-var name="X" />
+            <term-or-var name="false" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="false" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_∧">
+            <term-or-var name="false" />
+            <term-or-var name="X" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="false" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_∧">
+            <term-or-var name="X" />
+            <term-or-var name="true" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="X" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_∧">
+            <term-or-var name="true" />
+            <term-or-var name="X" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="X" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_∧">
+            <term-or-var name="X" />
+            <term-or-var name="X" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="X" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_⊻">
+            <term-or-var name="X" />
+            <term-or-var name="false" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="X" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_⊻">
+            <term-or-var name="false" />
+            <term-or-var name="X" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="X" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_⊻">
+            <term-or-var name="X" />
+            <term-or-var name="X" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="false" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="X" sort="boolean" />
+          <var id="Y" sort="boolean" />
+          <var id="Z" sort="boolean" />
+        </vars>
+        <pattern>
+          <term op="_∧">
+            <term-or-var name="X" />
+            <term op="_⊻">
+              <term-or-var name="Y" />
+              <term-or-var name="Z" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_⊻">
+            <term op="_∧">
+              <term-or-var name="X" />
+              <term-or-var name="Y" />
+            </term>
+            <term op="_∧">
+              <term-or-var name="X" />
+              <term-or-var name="Z" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+</context-collection>
