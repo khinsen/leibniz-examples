@@ -1,0 +1,83 @@
+<context-collection>
+  <context id="gcd">
+    <includes>
+      <context-ref>builtins/integers</context-ref>
+    </includes>
+    <sorts>
+      <sort id="ℕ" />
+    </sorts>
+    <subsorts />
+    <vars>
+      <var id="a" sort="ℕ" />
+      <var id="b" sort="ℕ" />
+    </vars>
+    <ops>
+      <op id="gcd">
+        <arity>
+          <var id="a" sort="ℕ" />
+          <var id="b" sort="ℕ" />
+        </arity>
+        <sort id="ℕ" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="gcd">
+            <term-or-var name="a" />
+            <term-or-var name="a" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="a" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="gcd">
+            <term-or-var name="a" />
+            <term-or-var name="b" />
+          </term>
+        </pattern>
+        <condition>
+          <term op="_&gt;">
+            <term-or-var name="a" />
+            <term-or-var name="b" />
+          </term>
+        </condition>
+        <replacement>
+          <term op="gcd">
+            <term op="_-">
+              <term-or-var name="a" />
+              <term-or-var name="b" />
+            </term>
+            <term-or-var name="b" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="gcd">
+            <term-or-var name="a" />
+            <term-or-var name="b" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="gcd">
+            <term-or-var name="a" />
+            <term op="_-">
+              <term-or-var name="b" />
+              <term-or-var name="a" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+</context-collection>
