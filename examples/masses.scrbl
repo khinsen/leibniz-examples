@@ -1,10 +1,10 @@
+
 #lang leibniz
 
 @title{Masses and mass units}
 @author{Konrad Hinsen}
 
-@import["builtins" leibniz-library/builtins]
-@import["boolean" leibniz-library/boolean]
+@import["boolean" "boolean.xml"]
 
 @context["mass" #:use "builtins/real-numbers"]{
 
@@ -85,5 +85,3 @@ conversion factors with respect to the pivot unit:
          @test{(2 × g) in mg ⇒ 2000 × mg}}
 
 }
-
-@xml["masses.xml"]

@@ -4,29 +4,22 @@
       <context-ref>builtins/real-numbers</context-ref>
     </includes>
     <sorts>
-      <sort id="mass" />
       <sort id="ℝp" />
+      <sort id="mass" />
     </sorts>
     <subsorts />
     <vars>
+      <var id="F" sort="ℝp" />
       <var id="F2" sort="ℝp" />
       <var id="F1" sort="ℝp" />
-      <var id="F" sort="ℝp" />
-      <var id="M2" sort="mass" />
       <var id="M1" sort="mass" />
       <var id="M" sort="mass" />
+      <var id="M2" sort="mass" />
     </vars>
     <ops>
       <op id="_+">
         <arity>
           <sort id="mass" />
-          <sort id="mass" />
-        </arity>
-        <sort id="mass" />
-      </op>
-      <op id="_×">
-        <arity>
-          <sort id="ℝp" />
           <sort id="mass" />
         </arity>
         <sort id="mass" />
@@ -45,6 +38,13 @@
         </arity>
         <sort id="ℝp" />
       </op>
+      <op id="_×">
+        <arity>
+          <sort id="ℝp" />
+          <sort id="mass" />
+        </arity>
+        <sort id="mass" />
+      </op>
     </ops>
     <rules>
       <rule>
@@ -52,12 +52,12 @@
         <pattern>
           <term op="_+">
             <term op="_×">
-              <term op="F1" />
-              <term op="M" />
+              <term-or-var name="F1" />
+              <term-or-var name="M" />
             </term>
             <term op="_×">
-              <term op="F2" />
-              <term op="M" />
+              <term-or-var name="F2" />
+              <term-or-var name="M" />
             </term>
           </term>
         </pattern>
@@ -65,10 +65,10 @@
         <replacement>
           <term op="_×">
             <term op="_+">
-              <term op="F1" />
-              <term op="F2" />
+              <term-or-var name="F1" />
+              <term-or-var name="F2" />
             </term>
-            <term op="M" />
+            <term-or-var name="M" />
           </term>
         </replacement>
       </rule>
@@ -76,10 +76,10 @@
         <vars />
         <pattern>
           <term op="_×">
-            <term op="F1" />
+            <term-or-var name="F1" />
             <term op="_×">
-              <term op="F2" />
-              <term op="M" />
+              <term-or-var name="F2" />
+              <term-or-var name="M" />
             </term>
           </term>
         </pattern>
@@ -87,10 +87,10 @@
         <replacement>
           <term op="_×">
             <term op="_×">
-              <term op="F1" />
-              <term op="F2" />
+              <term-or-var name="F1" />
+              <term-or-var name="F2" />
             </term>
-            <term op="M" />
+            <term-or-var name="M" />
           </term>
         </replacement>
       </rule>
@@ -98,8 +98,8 @@
         <vars />
         <pattern>
           <term op="_÷">
-            <term op="M" />
-            <term op="F" />
+            <term-or-var name="M" />
+            <term-or-var name="F" />
           </term>
         </pattern>
         <condition />
@@ -107,9 +107,9 @@
           <term op="_×">
             <term op="_÷">
               <integer value="1" />
-              <term op="F" />
+              <term-or-var name="F" />
             </term>
-            <term op="M" />
+            <term-or-var name="M" />
           </term>
         </replacement>
       </rule>
@@ -117,10 +117,10 @@
         <vars />
         <pattern>
           <term op="_÷">
-            <term op="M1" />
+            <term-or-var name="M1" />
             <term op="_×">
-              <term op="F" />
-              <term op="M2" />
+              <term-or-var name="F" />
+              <term-or-var name="M2" />
             </term>
           </term>
         </pattern>
@@ -128,10 +128,10 @@
         <replacement>
           <term op="_÷">
             <term op="_÷">
-              <term op="M1" />
-              <term op="F" />
+              <term-or-var name="M1" />
+              <term-or-var name="F" />
             </term>
-            <term op="M2" />
+            <term-or-var name="M2" />
           </term>
         </replacement>
       </rule>
@@ -140,19 +140,19 @@
         <pattern>
           <term op="_÷">
             <term op="_×">
-              <term op="F" />
-              <term op="M1" />
+              <term-or-var name="F" />
+              <term-or-var name="M1" />
             </term>
-            <term op="M2" />
+            <term-or-var name="M2" />
           </term>
         </pattern>
         <condition />
         <replacement>
           <term op="_×">
-            <term op="F" />
+            <term-or-var name="F" />
             <term op="_÷">
-              <term op="M1" />
-              <term op="M2" />
+              <term-or-var name="M1" />
+              <term-or-var name="M2" />
             </term>
           </term>
         </replacement>
@@ -161,8 +161,8 @@
         <vars />
         <pattern>
           <term op="_÷">
-            <term op="M" />
-            <term op="M" />
+            <term-or-var name="M" />
+            <term-or-var name="M" />
           </term>
         </pattern>
         <condition />
@@ -186,20 +186,20 @@
       <subsort subsort="mass-unit" supersort="mass" />
     </subsorts>
     <vars>
+      <var id="MU" sort="mass-unit" />
       <var id="MU2" sort="mass-unit" />
       <var id="MU1" sort="mass-unit" />
-      <var id="MU" sort="mass-unit" />
     </vars>
     <ops>
+      <op id="mg">
+        <arity />
+        <sort id="mass-unit" />
+      </op>
       <op id="kg">
         <arity />
         <sort id="mass-unit" />
       </op>
       <op id="g">
-        <arity />
-        <sort id="mass-unit" />
-      </op>
-      <op id="mg">
         <arity />
         <sort id="mass-unit" />
       </op>
@@ -216,8 +216,8 @@
         <vars />
         <pattern>
           <term op="_÷">
-            <term op="g" />
-            <term op="kg" />
+            <term-or-var name="g" />
+            <term-or-var name="kg" />
           </term>
         </pattern>
         <condition />
@@ -229,8 +229,8 @@
         <vars />
         <pattern>
           <term op="_÷">
-            <term op="mg" />
-            <term op="kg" />
+            <term-or-var name="mg" />
+            <term-or-var name="kg" />
           </term>
         </pattern>
         <condition />
@@ -242,18 +242,18 @@
         <vars />
         <pattern>
           <term op="_in">
-            <term op="M" />
-            <term op="MU" />
+            <term-or-var name="M" />
+            <term-or-var name="MU" />
           </term>
         </pattern>
         <condition />
         <replacement>
           <term op="_×">
             <term op="_÷">
-              <term op="M" />
-              <term op="MU" />
+              <term-or-var name="M" />
+              <term-or-var name="MU" />
             </term>
-            <term op="MU" />
+            <term-or-var name="MU" />
           </term>
         </replacement>
       </rule>
@@ -261,27 +261,27 @@
         <vars />
         <pattern>
           <term op="_÷">
-            <term op="MU1" />
-            <term op="MU2" />
+            <term-or-var name="MU1" />
+            <term-or-var name="MU2" />
           </term>
         </pattern>
         <condition>
           <term op="¬">
             <term op="_==">
-              <term op="MU2" />
-              <term op="kg" />
+              <term-or-var name="MU2" />
+              <term-or-var name="kg" />
             </term>
           </term>
         </condition>
         <replacement>
           <term op="_÷">
             <term op="_÷">
-              <term op="MU1" />
-              <term op="kg" />
+              <term-or-var name="MU1" />
+              <term-or-var name="kg" />
             </term>
             <term op="_÷">
-              <term op="MU2" />
-              <term op="kg" />
+              <term-or-var name="MU2" />
+              <term-or-var name="kg" />
             </term>
           </term>
         </replacement>

@@ -3,8 +3,6 @@
 @title{Heron's algorithm}
 @author{Konrad Hinsen}
 
-@import["builtins" leibniz-library/builtins]
-
 Heron's algorithm computes the square root of an input number @italic{x} iteratively,
 starting from an initial estimate @italic{e}, until the result is
 correct within a given tolerance @italic{ε}. It is a special case of Newton's method
@@ -76,4 +74,5 @@ Again we see that decreasing @term{ε} leads to better approximations of @term{�
 The deviation is always smaller than the prescribed tolerance.
 }
 
-@xml["heron.xml"]
+@;signature-graphs["heron.sig"]
+
