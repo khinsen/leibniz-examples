@@ -19,7 +19,9 @@ Each example also contains a link to an XML version, which contains just the def
 
 ## List of examples
 
- - [Euclid's GCD algorithm](examples/euclid_gcd.html) for the greatest common divisor of two natural numbers ([XML](examples/euclid_gcd.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/euclid_gcd.scrbl))
+ - Basic [mathematical functions](examples/functions.html) ([XML](examples/functions.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/functions.scrbl))
+ - The [predator-prey equations](examples/predator-prey.html) (also known as the Lotka-Volterra equations) ([XML](examples/predator-prey.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/predator-prey.scrbl))
+- [Euclid's GCD algorithm](examples/euclid_gcd.html) for the greatest common divisor of two natural numbers ([XML](examples/euclid_gcd.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/euclid_gcd.scrbl))
  - [Heron's algorithm](examples/heron.html) for computing square roots ([XML](examples/heron.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/heron.scrbl))
  - [Boolean algebra](examples/boolean.html), ([XML](examples/boolean.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/boolean.scrbl)])
  - [Masses and mass units](examples/masses.html) ([XML](examples/masses.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/masses.scrbl))

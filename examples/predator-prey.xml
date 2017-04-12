@@ -1,0 +1,90 @@
+<context-collection>
+  <context id="predator-prey">
+    <includes>
+      <context-ref>functions/ℝ→ℝ</context-ref>
+    </includes>
+    <sorts>
+      <sort id="ℝp" />
+      <sort id="ℝ→ℝ" />
+    </sorts>
+    <subsorts />
+    <vars />
+    <ops>
+      <op id="prey">
+        <arity />
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="predators">
+        <arity />
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="predator-growth-rate">
+        <arity />
+        <sort id="ℝp" />
+      </op>
+      <op id="predator-loss-rate">
+        <arity />
+        <sort id="ℝp" />
+      </op>
+      <op id="predation-rate">
+        <arity />
+        <sort id="ℝp" />
+      </op>
+      <op id="prey-growth-rate">
+        <arity />
+        <sort id="ℝp" />
+      </op>
+    </ops>
+    <rules />
+    <equations>
+      <equation id="pp2">
+        <vars />
+        <left>
+          <term op="𝒟">
+            <term-or-var name="predators" />
+          </term>
+        </left>
+        <condition />
+        <right>
+          <term op="_-">
+            <term op="_×">
+              <term-or-var name="predator-growth-rate" />
+              <term op="_×">
+                <term-or-var name="predators" />
+                <term-or-var name="prey" />
+              </term>
+            </term>
+            <term op="_×">
+              <term-or-var name="predator-loss-rate" />
+              <term-or-var name="predators" />
+            </term>
+          </term>
+        </right>
+      </equation>
+      <equation id="pp1">
+        <vars />
+        <left>
+          <term op="𝒟">
+            <term-or-var name="prey" />
+          </term>
+        </left>
+        <condition />
+        <right>
+          <term op="_-">
+            <term op="_×">
+              <term-or-var name="prey-growth-rate" />
+              <term-or-var name="prey" />
+            </term>
+            <term op="_×">
+              <term-or-var name="predation-rate" />
+              <term op="_×">
+                <term-or-var name="predators" />
+                <term-or-var name="prey" />
+              </term>
+            </term>
+          </term>
+        </right>
+      </equation>
+    </equations>
+  </context>
+</context-collection>

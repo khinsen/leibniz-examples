@@ -1,0 +1,190 @@
+<context-collection>
+  <context id="ℝ→ℝ">
+    <includes>
+      <context-ref>builtins/real-numbers</context-ref>
+    </includes>
+    <sorts>
+      <sort id="ℝ" />
+      <sort id="ℝ→ℝ" />
+    </sorts>
+    <subsorts />
+    <vars>
+      <var id="g" sort="ℝ→ℝ" />
+      <var id="f" sort="ℝ→ℝ" />
+      <var id="s" sort="ℝ" />
+    </vars>
+    <ops>
+      <op id="_-">
+        <arity>
+          <var id="f" sort="ℝ→ℝ" />
+          <var id="g" sort="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="_×">
+        <arity>
+          <var id="f" sort="ℝ→ℝ" />
+          <var id="g" sort="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="[]">
+        <arity>
+          <sort id="ℝ→ℝ" />
+          <sort id="ℝ" />
+        </arity>
+        <sort id="ℝ" />
+      </op>
+      <op id="_×">
+        <arity>
+          <var id="s" sort="ℝ" />
+          <var id="g" sort="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="𝒟">
+        <arity>
+          <sort id="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="_+">
+        <arity>
+          <var id="f" sort="ℝ→ℝ" />
+          <var id="g" sort="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars>
+          <var id="x" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_+">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_-">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_-">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_×">
+              <term-or-var name="s" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="s" />
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="𝒟">
+            <term op="_+">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="𝒟">
+              <term-or-var name="f" />
+            </term>
+            <term op="𝒟">
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+</context-collection>
