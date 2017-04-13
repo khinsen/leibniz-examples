@@ -87,4 +87,24 @@
       </equation>
     </equations>
   </context>
+  <context id="predator-prey-explanation">
+    <includes>
+      <context-ref>predator-prey</context-ref>
+    </includes>
+    <sorts>
+      <sort id="ℝp" />
+      <sort id="ℝ" />
+      <sort id="ℝ→ℝ" />
+    </sorts>
+    <subsorts />
+    <vars />
+    <ops>
+      <op id="f">
+        <arity />
+        <sort id="ℝ→ℝ" />
+      </op>
+    </ops>
+    <rules />
+    <equations />
+  </context>
 </context-collection>

@@ -19,8 +19,10 @@ Each example also contains a link to an XML version, which contains just the def
 
 ## List of examples
 
- - Basic [mathematical functions](examples/functions.html) ([XML](examples/functions.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/functions.scrbl))
- - The [predator-prey equations](examples/predator-prey.html) (also known as the Lotka-Volterra equations) ([XML](examples/predator-prey.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/predator-prey.scrbl))
+ [Leibniz by example](examples/leibniz-by-example.html) is the first example you should look at, because it contains many explanations of Leibniz itself. You can also consult the machine-readable version of the equations it contains as an [XML](examples/leibniz-by-example.xml) file, and have a look at the [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/leibniz-by-example.scrbl) from which both the human-readable and the machine-readable versions are generated.
+
+Other examples:
+- Basic [mathematical functions](examples/functions.html) ([XML](examples/functions.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/functions.scrbl))
 - [Euclid's GCD algorithm](examples/euclid_gcd.html) for the greatest common divisor of two natural numbers ([XML](examples/euclid_gcd.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/euclid_gcd.scrbl))
  - [Heron's algorithm](examples/heron.html) for computing square roots ([XML](examples/heron.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/heron.scrbl))
  - [Boolean algebra](examples/boolean.html), ([XML](examples/boolean.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/boolean.scrbl)])
