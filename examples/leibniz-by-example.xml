@@ -48,11 +48,11 @@
         <right>
           <term op="_-">
             <term op="_×">
-              <term-or-var name="predator-growth-rate" />
               <term op="_×">
+                <term-or-var name="predator-growth-rate" />
                 <term-or-var name="predators" />
-                <term-or-var name="prey" />
               </term>
+              <term-or-var name="prey" />
             </term>
             <term op="_×">
               <term-or-var name="predator-loss-rate" />
@@ -76,11 +76,11 @@
               <term-or-var name="prey" />
             </term>
             <term op="_×">
-              <term-or-var name="predation-rate" />
               <term op="_×">
+                <term-or-var name="predation-rate" />
                 <term-or-var name="predators" />
-                <term-or-var name="prey" />
               </term>
+              <term-or-var name="prey" />
             </term>
           </term>
         </right>

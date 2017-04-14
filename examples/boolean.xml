@@ -69,13 +69,13 @@
         <condition />
         <replacement>
           <term op="_⊻">
-            <term-or-var name="X" />
             <term op="_⊻">
+              <term-or-var name="X" />
               <term-or-var name="Y" />
-              <term op="_∧">
-                <term-or-var name="X" />
-                <term-or-var name="Y" />
-              </term>
+            </term>
+            <term op="_∧">
+              <term-or-var name="X" />
+              <term-or-var name="Y" />
             </term>
           </term>
         </replacement>
