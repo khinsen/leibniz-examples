@@ -1,7 +1,7 @@
-<context-collection>
+<leibniz-document>
   <context id="predator-prey">
     <includes>
-      <context-ref>functions/ℝ→ℝ</context-ref>
+      <use>functions/derivatives-ℝ→ℝ</use>
     </includes>
     <sorts>
       <sort id="ℝp" />
@@ -89,7 +89,7 @@
   </context>
   <context id="predator-prey-explanation">
     <includes>
-      <context-ref>predator-prey</context-ref>
+      <extend>predator-prey</extend>
     </includes>
     <sorts>
       <sort id="ℝp" />
@@ -107,4 +107,4 @@
     <rules />
     <equations />
   </context>
-</context-collection>
+</leibniz-document>

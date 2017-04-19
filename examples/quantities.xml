@@ -1,7 +1,7 @@
-<context-collection>
+<leibniz-document>
   <context id="quantities">
     <includes>
-      <context-ref>builtins/real-numbers</context-ref>
+      <use>builtins/real-numbers</use>
     </includes>
     <sorts>
       <sort id="ℝ" />
@@ -194,7 +194,7 @@
   </context>
   <context id="template">
     <includes>
-      <context-ref>quantities</context-ref>
+      <extend>quantities</extend>
     </includes>
     <sorts>
       <sort id="ℝ" />
@@ -417,7 +417,7 @@
   </context>
   <context id="template-test">
     <includes>
-      <context-ref>template</context-ref>
+      <extend>template</extend>
     </includes>
     <sorts>
       <sort id="SQ" />
@@ -453,7 +453,7 @@
   </context>
   <context id="mass">
     <includes>
-      <context-ref>quantities</context-ref>
+      <extend>quantities</extend>
     </includes>
     <sorts>
       <sort id="ℝ" />
@@ -704,7 +704,7 @@
   </context>
   <context id="length">
     <includes>
-      <context-ref>quantities</context-ref>
+      <extend>quantities</extend>
     </includes>
     <sorts>
       <sort id="ℝ" />
@@ -955,7 +955,7 @@
   </context>
   <context id="time">
     <includes>
-      <context-ref>quantities</context-ref>
+      <extend>quantities</extend>
     </includes>
     <sorts>
       <sort id="ℝ" />
@@ -1206,7 +1206,7 @@
   </context>
   <context id="velocity">
     <includes>
-      <context-ref>quantities</context-ref>
+      <extend>quantities</extend>
     </includes>
     <sorts>
       <sort id="ℝ" />
@@ -1457,7 +1457,7 @@
   </context>
   <context id="acceleration">
     <includes>
-      <context-ref>quantities</context-ref>
+      <extend>quantities</extend>
     </includes>
     <sorts>
       <sort id="ℝ" />
@@ -1708,10 +1708,10 @@
   </context>
   <context id="kinematics">
     <includes>
-      <context-ref>length</context-ref>
-      <context-ref>time</context-ref>
-      <context-ref>velocity</context-ref>
-      <context-ref>acceleration</context-ref>
+      <use>length</use>
+      <use>time</use>
+      <use>velocity</use>
+      <use>acceleration</use>
     </includes>
     <sorts>
       <sort id="A" />
@@ -1758,7 +1758,7 @@
   </context>
   <context id="kinematics-example">
     <includes>
-      <context-ref>kinematics</context-ref>
+      <extend>kinematics</extend>
     </includes>
     <sorts>
       <sort id="A" />
@@ -1852,7 +1852,7 @@
   </context>
   <context id="kinematics-nummerical-example">
     <includes>
-      <context-ref>kinematics-example</context-ref>
+      <extend>kinematics-example</extend>
     </includes>
     <sorts>
       <sort id="Lnz" />
@@ -1926,4 +1926,4 @@
     </rules>
     <equations />
   </context>
-</context-collection>
+</leibniz-document>

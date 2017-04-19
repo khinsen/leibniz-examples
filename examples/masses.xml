@@ -1,7 +1,7 @@
-<context-collection>
+<leibniz-document>
   <context id="mass">
     <includes>
-      <context-ref>builtins/real-numbers</context-ref>
+      <use>builtins/real-numbers</use>
     </includes>
     <sorts>
       <sort id="ℝp" />
@@ -175,8 +175,8 @@
   </context>
   <context id="mass-units">
     <includes>
-      <context-ref>mass</context-ref>
-      <context-ref>boolean/boolean</context-ref>
+      <extend>mass</extend>
+      <use>boolean/boolean</use>
     </includes>
     <sorts>
       <sort id="mass-unit" />
@@ -289,4 +289,4 @@
     </rules>
     <equations />
   </context>
-</context-collection>
+</leibniz-document>

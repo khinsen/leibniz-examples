@@ -1,7 +1,7 @@
-<context-collection>
+<leibniz-document>
   <context id="ℝ→ℝ">
     <includes>
-      <context-ref>builtins/real-numbers</context-ref>
+      <use>builtins/real-numbers</use>
     </includes>
     <sorts>
       <sort id="ℝ" />
@@ -42,9 +42,10 @@
         </arity>
         <sort id="ℝ→ℝ" />
       </op>
-      <op id="𝒟">
+      <op id="_○">
         <arity>
-          <sort id="ℝ→ℝ" />
+          <var id="f" sort="ℝ→ℝ" />
+          <var id="g" sort="ℝ→ℝ" />
         </arity>
         <sort id="ℝ→ℝ" />
       </op>
@@ -163,6 +164,51 @@
         </replacement>
       </rule>
       <rule>
+        <vars>
+          <var id="x" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_○">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="[]">
+            <term-or-var name="f" />
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+  <context id="derivatives-ℝ→ℝ">
+    <includes>
+      <extend>ℝ→ℝ</extend>
+    </includes>
+    <sorts>
+      <sort id="ℝ→ℝ" />
+    </sorts>
+    <subsorts />
+    <vars />
+    <ops>
+      <op id="𝒟">
+        <arity>
+          <sort id="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
         <vars />
         <pattern>
           <term op="𝒟">
@@ -184,7 +230,274 @@
           </term>
         </replacement>
       </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="𝒟">
+            <term op="_-">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_-">
+            <term op="𝒟">
+              <term-or-var name="f" />
+            </term>
+            <term op="𝒟">
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="𝒟">
+            <term op="_×">
+              <term-or-var name="s" />
+              <term-or-var name="f" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="s" />
+            <term op="𝒟">
+              <term-or-var name="f" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="𝒟">
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="_×">
+              <term op="𝒟">
+                <term-or-var name="f" />
+              </term>
+              <term-or-var name="g" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f" />
+              <term op="𝒟">
+                <term-or-var name="g" />
+              </term>
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="𝒟">
+            <term op="_○">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_○">
+              <term op="𝒟">
+                <term-or-var name="f" />
+              </term>
+              <term-or-var name="g" />
+            </term>
+            <term op="𝒟">
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
     </rules>
     <equations />
   </context>
-</context-collection>
+  <context id="finite-differences-ℝ→ℝ">
+    <includes>
+      <extend>ℝ→ℝ</extend>
+    </includes>
+    <sorts>
+      <sort id="finite-difference-scheme" />
+      <sort id="finite-difference-family" />
+      <sort id="finite-difference-operator" />
+      <sort id="ℝ→ℝ" />
+    </sorts>
+    <subsorts />
+    <vars>
+      <var id="fn" sort="ℝ→ℝ" />
+      <var id="h" sort="ℝ" />
+    </vars>
+    <ops>
+      <op id="Δ">
+        <arity />
+        <sort id="finite-difference-family" />
+      </op>
+      <op id="forward">
+        <arity />
+        <sort id="finite-difference-scheme" />
+      </op>
+      <op id="central">
+        <arity />
+        <sort id="finite-difference-scheme" />
+      </op>
+      <op id="_">
+        <arity>
+          <sort id="finite-difference-family" />
+          <sort id="finite-difference-scheme" />
+        </arity>
+        <sort id="finite-difference-operator" />
+      </op>
+      <op id="[]">
+        <arity>
+          <sort id="finite-difference-operator" />
+          <var id="fn" sort="ℝ→ℝ" />
+          <var id="h" sort="ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="backward">
+        <arity />
+        <sort id="finite-difference-scheme" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars>
+          <var id="x" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="[]">
+              <term op="_">
+                <term-or-var name="Δ" />
+                <term-or-var name="forward" />
+              </term>
+              <term-or-var name="fn" />
+              <term-or-var name="h" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_÷">
+            <term op="_-">
+              <term op="[]">
+                <term-or-var name="fn" />
+                <term op="_+">
+                  <term-or-var name="x" />
+                  <term-or-var name="h" />
+                </term>
+              </term>
+              <term op="[]">
+                <term-or-var name="fn" />
+                <term-or-var name="x" />
+              </term>
+            </term>
+            <term-or-var name="h" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="[]">
+              <term op="_">
+                <term-or-var name="Δ" />
+                <term-or-var name="backward" />
+              </term>
+              <term-or-var name="fn" />
+              <term-or-var name="h" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_÷">
+            <term op="_-">
+              <term op="[]">
+                <term-or-var name="fn" />
+                <term-or-var name="x" />
+              </term>
+              <term op="[]">
+                <term-or-var name="fn" />
+                <term op="_-">
+                  <term-or-var name="x" />
+                  <term-or-var name="h" />
+                </term>
+              </term>
+            </term>
+            <term-or-var name="h" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="[]">
+              <term op="_">
+                <term-or-var name="Δ" />
+                <term-or-var name="central" />
+              </term>
+              <term-or-var name="fn" />
+              <term-or-var name="h" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_÷">
+            <term op="_-">
+              <term op="[]">
+                <term-or-var name="fn" />
+                <term op="_+">
+                  <term-or-var name="x" />
+                  <term op="_÷">
+                    <term-or-var name="h" />
+                    <integer value="2" />
+                  </term>
+                </term>
+              </term>
+              <term op="[]">
+                <term-or-var name="fn" />
+                <term op="_-">
+                  <term-or-var name="x" />
+                  <term op="_÷">
+                    <term-or-var name="h" />
+                    <integer value="2" />
+                  </term>
+                </term>
+              </term>
+            </term>
+            <term-or-var name="h" />
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <equations />
+  </context>
+</leibniz-document>

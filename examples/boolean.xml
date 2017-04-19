@@ -1,7 +1,7 @@
-<context-collection>
+<leibniz-document>
   <context id="boolean">
     <includes>
-      <context-ref>builtins/truth</context-ref>
+      <use>builtins/truth</use>
     </includes>
     <sorts>
       <sort id="boolean" />
@@ -232,4 +232,4 @@
     </rules>
     <equations />
   </context>
-</context-collection>
+</leibniz-document>

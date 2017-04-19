@@ -1,7 +1,7 @@
-<context-collection>
+<leibniz-document>
   <context id="heron">
     <includes>
-      <context-ref>builtins/real-numbers</context-ref>
+      <use>builtins/real-numbers</use>
     </includes>
     <sorts>
       <sort id="ℝnn" />
@@ -106,12 +106,8 @@
   </context>
   <context id="fp-heron">
     <includes>
-      <context-ref>
-        <use>builtins/IEEE-floating-point-with-conversion</use>
-      </context-ref>
-      <context-ref>
-        <use>builtins/real-numbers</use>
-      </context-ref>
+      <use>builtins/IEEE-floating-point-with-conversion</use>
+      <use>builtins/real-numbers</use>
     </includes>
     <sorts />
     <subsorts />
@@ -223,4 +219,4 @@
     </rules>
     <equations />
   </context>
-</context-collection>
+</leibniz-document>

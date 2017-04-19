@@ -1,7 +1,7 @@
-<context-collection>
+<leibniz-document>
   <context id="gcd">
     <includes>
-      <context-ref>builtins/integers</context-ref>
+      <use>builtins/integers</use>
     </includes>
     <sorts>
       <sort id="ℕ" />
@@ -80,4 +80,4 @@
     </rules>
     <equations />
   </context>
-</context-collection>
+</leibniz-document>
