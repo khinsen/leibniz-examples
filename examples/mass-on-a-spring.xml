@@ -1,0 +1,215 @@
+<leibniz-document>
+  <library>
+    <document-ref id="mechanics">mechanics.xml</document-ref>
+  </library>
+  <context id="mass-on-a-spring">
+    <includes>
+      <use>mechanics/dynamics</use>
+    </includes>
+    <sorts>
+      <sort id="ℝ" />
+      <sort id="T→A" />
+      <sort id="angular-frequency" />
+      <sort id="T→L" />
+      <sort id="angular-frequency-squared" />
+      <sort id="T→F" />
+      <sort id="force-constant" />
+      <sort id="L" />
+      <sort id="M" />
+    </sorts>
+    <subsorts />
+    <vars />
+    <ops>
+      <op id="m">
+        <arity />
+        <sort id="M" />
+      </op>
+      <op id="√">
+        <arity>
+          <sort id="angular-frequency-squared" />
+        </arity>
+        <sort id="angular-frequency" />
+      </op>
+      <op id="cos">
+        <arity>
+          <sort id="ℝ" />
+        </arity>
+        <sort id="ℝ" />
+      </op>
+      <op id="ω">
+        <arity />
+        <sort id="angular-frequency" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="force-constant" />
+          <sort id="M" />
+        </arity>
+        <sort id="angular-frequency-squared" />
+      </op>
+      <op id="k">
+        <arity />
+        <sort id="force-constant" />
+      </op>
+      <op id="F">
+        <arity />
+        <sort id="T→F" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="angular-frequency" />
+          <sort id="T" />
+        </arity>
+        <sort id="ℝ" />
+      </op>
+      <op id="x">
+        <arity />
+        <sort id="T→L" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="angular-frequency-squared" />
+          <sort id="T→L" />
+        </arity>
+        <sort id="T→A" />
+      </op>
+      <op id="l">
+        <arity />
+        <sort id="L" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="force-constant" />
+          <sort id="T→L" />
+        </arity>
+        <sort id="T→F" />
+      </op>
+      <op id="A">
+        <arity />
+        <sort id="L" />
+      </op>
+      <op id="δ">
+        <arity />
+        <sort id="ℝ" />
+      </op>
+      <op id="d">
+        <arity />
+        <sort id="T→L" />
+      </op>
+    </ops>
+    <rules />
+    <assets>
+      <asset id="newton-x">
+        <equation>
+          <vars />
+          <left>
+            <term op="_×">
+              <term-or-var name="m" />
+              <term op="𝒟">
+                <term op="𝒟">
+                  <term-or-var name="x" />
+                </term>
+              </term>
+            </term>
+          </left>
+          <condition />
+          <right>
+            <term op="-">
+              <term op="_×">
+                <term-or-var name="k" />
+                <term op="_-">
+                  <term-or-var name="x" />
+                  <term-or-var name="l" />
+                </term>
+              </term>
+            </term>
+          </right>
+        </equation>
+      </asset>
+      <asset id="force">
+        <equation>
+          <vars />
+          <left>
+            <term-or-var name="F" />
+          </left>
+          <condition />
+          <right>
+            <term op="-">
+              <term op="_×">
+                <term-or-var name="k" />
+                <term-or-var name="d" />
+              </term>
+            </term>
+          </right>
+        </equation>
+      </asset>
+      <asset id="newton-d">
+        <equation>
+          <vars />
+          <left>
+            <term op="𝒟">
+              <term op="𝒟">
+                <term-or-var name="d" />
+              </term>
+            </term>
+          </left>
+          <condition />
+          <right>
+            <term op="-">
+              <term op="_×">
+                <term op="_÷">
+                  <term-or-var name="k" />
+                  <term-or-var name="m" />
+                </term>
+                <term-or-var name="d" />
+              </term>
+            </term>
+          </right>
+        </equation>
+      </asset>
+      <asset id="def-d">
+        <equation>
+          <vars />
+          <left>
+            <term-or-var name="d" />
+          </left>
+          <condition />
+          <right>
+            <term op="_-">
+              <term-or-var name="x" />
+              <term-or-var name="l" />
+            </term>
+          </right>
+        </equation>
+      </asset>
+      <asset id="solution">
+        <equation>
+          <vars>
+            <var id="t" sort="T" />
+          </vars>
+          <left>
+            <term op="[]">
+              <term-or-var name="d" />
+              <term-or-var name="t" />
+            </term>
+          </left>
+          <condition />
+          <right>
+            <term op="_×">
+              <term-or-var name="A" />
+              <term op="cos">
+                <term op="_+">
+                  <term op="_×">
+                    <term-or-var name="ω" />
+                    <term-or-var name="t" />
+                  </term>
+                  <term-or-var name="δ" />
+                </term>
+              </term>
+            </term>
+          </right>
+        </equation>
+      </asset>
+    </assets>
+  </context>
+</leibniz-document>

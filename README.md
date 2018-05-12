@@ -17,7 +17,7 @@ Each example also contains a link to an XML version, which contains just the def
 
 ## List of examples
 
- [Leibniz by example](examples/leibniz-by-example.html) is the first example you should look at, because it contains many explanations of Leibniz itself. You can also consult the machine-readable version of the equations it contains as an [XML](examples/leibniz-by-example.xml) file, and have a look at the [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/leibniz-by-example.scrbl) from which both the human-readable and the machine-readable versions are generated.
+[Leibniz by example](examples/leibniz-by-example.html) is the first example you should look at, because it contains many explanations of Leibniz itself. You can also consult the machine-readable version of the equations it contains as an [XML](examples/leibniz-by-example.xml) file, and have a look at the [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/leibniz-by-example.scrbl) from which both the human-readable and the machine-readable versions are generated.
 
 Other examples:
 - Basic [mathematical functions](examples/functions.html) ([XML](examples/functions.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/functions.scrbl))
@@ -26,3 +26,5 @@ Other examples:
  - [Boolean algebra](examples/boolean.html), ([XML](examples/boolean.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/boolean.scrbl)])
  - [Masses and mass units](examples/masses.html) ([XML](examples/masses.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/masses.scrbl))
 - A more general [framework for physical quantities](examples/quantities.html) ([XML](examples/quantities.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/quantities.scrbl))
+- A [framework for point mechanics](examples/mechanics.html) ([XML](examples/mechanics.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/mechanics.scrbl)) that builds on the quantities framework
+- An application of the mechanics framework: the [motion of a mass on a spring](examples/mass-on-a-spring.html) ([XML](examples/mass-on-a-spring.xml), [source code](https://github.com/khinsen/leibniz-examples/blob/master/examples/mass-on-a-spring.scrbl))
