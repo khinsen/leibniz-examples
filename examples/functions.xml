@@ -1,4 +1,5 @@
 <leibniz-document>
+  <library />
   <context id="ℝ→ℝ">
     <includes>
       <use>builtins/real-numbers</use>
@@ -21,6 +22,27 @@
         </arity>
         <sort id="ℝ→ℝ" />
       </op>
+      <op id="_+">
+        <arity>
+          <var id="f" sort="ℝ→ℝ" />
+          <var id="g" sort="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="_○">
+        <arity>
+          <var id="f" sort="ℝ→ℝ" />
+          <var id="g" sort="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="_×">
+        <arity>
+          <var id="s" sort="ℝ" />
+          <var id="g" sort="ℝ→ℝ" />
+        </arity>
+        <sort id="ℝ→ℝ" />
+      </op>
       <op id="_×">
         <arity>
           <var id="f" sort="ℝ→ℝ" />
@@ -34,27 +56,6 @@
           <sort id="ℝ" />
         </arity>
         <sort id="ℝ" />
-      </op>
-      <op id="_×">
-        <arity>
-          <var id="s" sort="ℝ" />
-          <var id="g" sort="ℝ→ℝ" />
-        </arity>
-        <sort id="ℝ→ℝ" />
-      </op>
-      <op id="_○">
-        <arity>
-          <var id="f" sort="ℝ→ℝ" />
-          <var id="g" sort="ℝ→ℝ" />
-        </arity>
-        <sort id="ℝ→ℝ" />
-      </op>
-      <op id="_+">
-        <arity>
-          <var id="f" sort="ℝ→ℝ" />
-          <var id="g" sort="ℝ→ℝ" />
-        </arity>
-        <sort id="ℝ→ℝ" />
       </op>
     </ops>
     <rules>
@@ -188,7 +189,7 @@
         </replacement>
       </rule>
     </rules>
-    <equations />
+    <assets />
   </context>
   <context id="derivatives-ℝ→ℝ">
     <includes>
@@ -326,7 +327,7 @@
         </replacement>
       </rule>
     </rules>
-    <equations />
+    <assets />
   </context>
   <context id="finite-differences-ℝ→ℝ">
     <includes>
@@ -344,24 +345,17 @@
       <var id="h" sort="ℝ" />
     </vars>
     <ops>
-      <op id="Δ">
-        <arity />
-        <sort id="finite-difference-family" />
-      </op>
       <op id="forward">
+        <arity />
+        <sort id="finite-difference-scheme" />
+      </op>
+      <op id="backward">
         <arity />
         <sort id="finite-difference-scheme" />
       </op>
       <op id="central">
         <arity />
         <sort id="finite-difference-scheme" />
-      </op>
-      <op id="_">
-        <arity>
-          <sort id="finite-difference-family" />
-          <sort id="finite-difference-scheme" />
-        </arity>
-        <sort id="finite-difference-operator" />
       </op>
       <op id="[]">
         <arity>
@@ -371,9 +365,16 @@
         </arity>
         <sort id="ℝ→ℝ" />
       </op>
-      <op id="backward">
+      <op id="_">
+        <arity>
+          <sort id="finite-difference-family" />
+          <sort id="finite-difference-scheme" />
+        </arity>
+        <sort id="finite-difference-operator" />
+      </op>
+      <op id="Δ">
         <arity />
-        <sort id="finite-difference-scheme" />
+        <sort id="finite-difference-family" />
       </op>
     </ops>
     <rules>
@@ -498,6 +499,6 @@
         </replacement>
       </rule>
     </rules>
-    <equations />
+    <assets />
   </context>
 </leibniz-document>

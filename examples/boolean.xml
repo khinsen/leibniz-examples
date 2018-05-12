@@ -1,4 +1,5 @@
 <leibniz-document>
+  <library />
   <context id="boolean">
     <includes>
       <use>builtins/truth</use>
@@ -9,13 +10,7 @@
     <subsorts />
     <vars />
     <ops>
-      <op id="¬">
-        <arity>
-          <sort id="boolean" />
-        </arity>
-        <sort id="boolean" />
-      </op>
-      <op id="_∧">
+      <op id="_∨">
         <arity>
           <sort id="boolean" />
           <sort id="boolean" />
@@ -29,7 +24,13 @@
         </arity>
         <sort id="boolean" />
       </op>
-      <op id="_∨">
+      <op id="¬">
+        <arity>
+          <sort id="boolean" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_∧">
         <arity>
           <sort id="boolean" />
           <sort id="boolean" />
@@ -230,6 +231,6 @@
         </replacement>
       </rule>
     </rules>
-    <equations />
+    <assets />
   </context>
 </leibniz-document>

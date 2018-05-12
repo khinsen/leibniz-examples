@@ -1,4 +1,7 @@
 <leibniz-document>
+  <library>
+    <document-ref id="boolean">boolean.xml</document-ref>
+  </library>
   <context id="mass">
     <includes>
       <use>builtins/real-numbers</use>
@@ -17,12 +20,12 @@
       <var id="M2" sort="mass" />
     </vars>
     <ops>
-      <op id="_+">
+      <op id="_÷">
         <arity>
           <sort id="mass" />
           <sort id="mass" />
         </arity>
-        <sort id="mass" />
+        <sort id="ℝp" />
       </op>
       <op id="_÷">
         <arity>
@@ -31,12 +34,12 @@
         </arity>
         <sort id="mass" />
       </op>
-      <op id="_÷">
+      <op id="_+">
         <arity>
           <sort id="mass" />
           <sort id="mass" />
         </arity>
-        <sort id="ℝp" />
+        <sort id="mass" />
       </op>
       <op id="_×">
         <arity>
@@ -171,7 +174,7 @@
         </replacement>
       </rule>
     </rules>
-    <equations />
+    <assets />
   </context>
   <context id="mass-units">
     <includes>
@@ -191,6 +194,13 @@
       <var id="MU1" sort="mass-unit" />
     </vars>
     <ops>
+      <op id="_in">
+        <arity>
+          <sort id="mass" />
+          <sort id="mass-unit" />
+        </arity>
+        <sort id="mass" />
+      </op>
       <op id="mg">
         <arity />
         <sort id="mass-unit" />
@@ -202,13 +212,6 @@
       <op id="g">
         <arity />
         <sort id="mass-unit" />
-      </op>
-      <op id="_in">
-        <arity>
-          <sort id="mass" />
-          <sort id="mass-unit" />
-        </arity>
-        <sort id="mass" />
       </op>
     </ops>
     <rules>
@@ -287,6 +290,6 @@
         </replacement>
       </rule>
     </rules>
-    <equations />
+    <assets />
   </context>
 </leibniz-document>

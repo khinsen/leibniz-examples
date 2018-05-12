@@ -1,4 +1,5 @@
 <leibniz-document>
+  <library />
   <context id="gcd">
     <includes>
       <use>builtins/integers</use>
@@ -78,6 +79,6 @@
         </replacement>
       </rule>
     </rules>
-    <equations />
+    <assets />
   </context>
 </leibniz-document>

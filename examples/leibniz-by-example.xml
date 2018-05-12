@@ -1,4 +1,7 @@
 <leibniz-document>
+  <library>
+    <document-ref id="functions">functions.xml</document-ref>
+  </library>
   <context id="predator-prey">
     <includes>
       <use>functions/derivatives-ℝ→ℝ</use>
@@ -10,21 +13,13 @@
     <subsorts />
     <vars />
     <ops>
-      <op id="prey">
+      <op id="predator-loss-rate">
         <arity />
-        <sort id="ℝ→ℝ" />
+        <sort id="ℝp" />
       </op>
       <op id="predators">
         <arity />
         <sort id="ℝ→ℝ" />
-      </op>
-      <op id="predator-growth-rate">
-        <arity />
-        <sort id="ℝp" />
-      </op>
-      <op id="predator-loss-rate">
-        <arity />
-        <sort id="ℝp" />
       </op>
       <op id="predation-rate">
         <arity />
@@ -34,58 +29,70 @@
         <arity />
         <sort id="ℝp" />
       </op>
+      <op id="prey">
+        <arity />
+        <sort id="ℝ→ℝ" />
+      </op>
+      <op id="predator-growth-rate">
+        <arity />
+        <sort id="ℝp" />
+      </op>
     </ops>
     <rules />
-    <equations>
-      <equation id="pp2">
-        <vars />
-        <left>
-          <term op="𝒟">
-            <term-or-var name="predators" />
-          </term>
-        </left>
-        <condition />
-        <right>
-          <term op="_-">
-            <term op="_×">
-              <term op="_×">
-                <term-or-var name="predator-growth-rate" />
-                <term-or-var name="predators" />
-              </term>
-              <term-or-var name="prey" />
-            </term>
-            <term op="_×">
-              <term-or-var name="predator-loss-rate" />
+    <assets>
+      <asset id="pp2">
+        <equation>
+          <vars />
+          <left>
+            <term op="𝒟">
               <term-or-var name="predators" />
             </term>
-          </term>
-        </right>
-      </equation>
-      <equation id="pp1">
-        <vars />
-        <left>
-          <term op="𝒟">
-            <term-or-var name="prey" />
-          </term>
-        </left>
-        <condition />
-        <right>
-          <term op="_-">
-            <term op="_×">
-              <term-or-var name="prey-growth-rate" />
-              <term-or-var name="prey" />
-            </term>
-            <term op="_×">
+          </left>
+          <condition />
+          <right>
+            <term op="_-">
               <term op="_×">
-                <term-or-var name="predation-rate" />
+                <term op="_×">
+                  <term-or-var name="predator-growth-rate" />
+                  <term-or-var name="predators" />
+                </term>
+                <term-or-var name="prey" />
+              </term>
+              <term op="_×">
+                <term-or-var name="predator-loss-rate" />
                 <term-or-var name="predators" />
               </term>
+            </term>
+          </right>
+        </equation>
+      </asset>
+      <asset id="pp1">
+        <equation>
+          <vars />
+          <left>
+            <term op="𝒟">
               <term-or-var name="prey" />
             </term>
-          </term>
-        </right>
-      </equation>
-    </equations>
+          </left>
+          <condition />
+          <right>
+            <term op="_-">
+              <term op="_×">
+                <term-or-var name="prey-growth-rate" />
+                <term-or-var name="prey" />
+              </term>
+              <term op="_×">
+                <term op="_×">
+                  <term-or-var name="predation-rate" />
+                  <term-or-var name="predators" />
+                </term>
+                <term-or-var name="prey" />
+              </term>
+            </term>
+          </right>
+        </equation>
+      </asset>
+    </assets>
   </context>
   <context id="predator-prey-explanation">
     <includes>
@@ -105,6 +112,6 @@
       </op>
     </ops>
     <rules />
-    <equations />
+    <assets />
   </context>
 </leibniz-document>

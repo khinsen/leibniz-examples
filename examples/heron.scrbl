@@ -43,13 +43,8 @@ We see that decreasing @term{ε} leads to better approximations of √2, which a
 always within the prescribed tolerance.
 }
 
-@(require leibniz/numeric
-          leibniz/documents)
-
 @context["fp-heron"
-         #:use "builtins/IEEE-floating-point-with-conversion"
-         #:use "builtins/real-numbers"
-         #:from-context @(real->FP64 (get-context leibniz "heron"))]{
+         #:insert ["heron" (real->float FP64)]]{
 
 @section{Heron's algorithm using floating-point arithmetic}
 
@@ -73,6 +68,3 @@ We can use this version with floating-point arguments:
 Again we see that decreasing @term{ε} leads to better approximations of @term{√(2.)}.
 The deviation is always smaller than the prescribed tolerance.
 }
-
-@;signature-graphs["heron.sig"]
-
