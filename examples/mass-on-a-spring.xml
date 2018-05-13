@@ -1,13 +1,16 @@
 <leibniz-document>
   <library>
     <document-ref id="mechanics">mechanics.xml</document-ref>
+    <document-ref id="quantities">quantities.xml</document-ref>
   </library>
   <context id="mass-on-a-spring">
     <includes>
       <use>mechanics/dynamics</use>
+      <use>quantities/angular-frequency</use>
     </includes>
     <sorts>
       <sort id="ℝ" />
+      <sort id="angle" />
       <sort id="T→A" />
       <sort id="angular-frequency" />
       <sort id="T→L" />
@@ -30,12 +33,6 @@
         </arity>
         <sort id="angular-frequency" />
       </op>
-      <op id="cos">
-        <arity>
-          <sort id="ℝ" />
-        </arity>
-        <sort id="ℝ" />
-      </op>
       <op id="ω">
         <arity />
         <sort id="angular-frequency" />
@@ -55,13 +52,6 @@
         <arity />
         <sort id="T→F" />
       </op>
-      <op id="_×">
-        <arity>
-          <sort id="angular-frequency" />
-          <sort id="T" />
-        </arity>
-        <sort id="ℝ" />
-      </op>
       <op id="x">
         <arity />
         <sort id="T→L" />
@@ -72,6 +62,12 @@
           <sort id="T→L" />
         </arity>
         <sort id="T→A" />
+      </op>
+      <op id="cos">
+        <arity>
+          <sort id="angle" />
+        </arity>
+        <sort id="ℝ" />
       </op>
       <op id="l">
         <arity />
@@ -84,13 +80,13 @@
         </arity>
         <sort id="T→F" />
       </op>
+      <op id="δ">
+        <arity />
+        <sort id="angle" />
+      </op>
       <op id="A">
         <arity />
         <sort id="L" />
-      </op>
-      <op id="δ">
-        <arity />
-        <sort id="ℝ" />
       </op>
       <op id="d">
         <arity />
