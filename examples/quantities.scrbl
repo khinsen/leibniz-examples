@@ -45,6 +45,15 @@ Replace division by multiplication:
          @rule{q1 ÷ (f × q2) ⇒ (1 ÷ f) × (q1 ÷ q2)
                ∀ q1:Q  ∀ q2:Qnz  ∀ f:ℝnz}}
 
+Remove quantities of zero magnitude from sums:
+  @inset{@rule{q1 + (0 × q2) ⇒ q1
+                ∀ q1:Q  ∀ q2:Q}
+         @rule{q1 - (0 × q2) ⇒ q1
+                ∀ q1:Q  ∀ q2:Q}
+         @rule{(0 × q2) + q1 ⇒ q1
+                ∀ q1:Q  ∀ q2:Q}
+         @rule{(0 × q2) - q1 ⇒ q1
+                ∀ q1:Q  ∀ q2:Q}}
 }
 
 @context["template" #:extend "quantities"]{
@@ -284,6 +293,25 @@ and @var{s:ℝ} we have
          @rule{𝒟(s × f) ⇒ s × 𝒟(f)}}
 
 }
+
+@context["function-with-finite-difference-template"
+         #:insert["function-with-derivative-template"]]{
+
+In numerical approximations, the derivative operator
+@op{𝒟(SQD→SQI) : SQD→SQID} is replaced by the finite-difference
+operator @op{Δ(f:SQD→SQI, h:SQDnz) : SQD→SQID}. A finite-difference
+approximation is characterized by a parameter @var{h:SQDnz}, assumed
+to be a sufficiently small quantity.
+
+Like the derivative operators, the finite-difference operator is linear, i.e.
+for two functions @var{f:SQD→SQI} and @var{g:SQD→SQI}, and a
+numerical scaling factor @var{s:ℝ}, we have
+  @inset{@rule{Δ(f + g, h) ⇒ Δ(f, h) + Δ(g, h)}
+         @rule{Δ(f - g, h) ⇒ Δ(f, h) - Δ(g, h)}
+         @rule{Δ(s × f, h) ⇒ s × Δ(f, h)}}
+
+}
+
 
 @;signature-graphs["quantities.sig"]
 

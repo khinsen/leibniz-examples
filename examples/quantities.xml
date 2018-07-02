@@ -190,6 +190,82 @@
           </term>
         </replacement>
       </rule>
+      <rule>
+        <vars>
+          <var id="q1" sort="Q" />
+          <var id="q2" sort="Q" />
+        </vars>
+        <pattern>
+          <term op="_+">
+            <term-or-var name="q1" />
+            <term op="_×">
+              <integer value="0" />
+              <term-or-var name="q2" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="q1" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="q1" sort="Q" />
+          <var id="q2" sort="Q" />
+        </vars>
+        <pattern>
+          <term op="_-">
+            <term-or-var name="q1" />
+            <term op="_×">
+              <integer value="0" />
+              <term-or-var name="q2" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="q1" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="q1" sort="Q" />
+          <var id="q2" sort="Q" />
+        </vars>
+        <pattern>
+          <term op="_+">
+            <term op="_×">
+              <integer value="0" />
+              <term-or-var name="q2" />
+            </term>
+            <term-or-var name="q1" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="q1" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="q1" sort="Q" />
+          <var id="q2" sort="Q" />
+        </vars>
+        <pattern>
+          <term op="_-">
+            <term op="_×">
+              <integer value="0" />
+              <term-or-var name="q2" />
+            </term>
+            <term-or-var name="q1" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term-or-var name="q1" />
+        </replacement>
+      </rule>
     </rules>
     <assets />
   </context>
@@ -5183,6 +5259,1680 @@
             <term-or-var name="s" />
             <term op="𝒟">
               <term-or-var name="f" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+    </rules>
+    <assets />
+  </context>
+  <context id="function-with-finite-difference-template">
+    <includes>
+      <extend>quantities</extend>
+    </includes>
+    <sorts>
+      <sort id="SQD" />
+      <sort id="ℝ" />
+      <sort id="boolean" />
+      <sort id="SQD→SQI" />
+      <sort id="Q" />
+      <sort id="Qnz" />
+      <sort id="Qℝ" />
+      <sort id="SQInz" />
+      <sort id="SQD→SQID" />
+      <sort id="SQDnz" />
+      <sort id="SQI" />
+      <sort id="SQID" />
+      <sort id="ℝnz" />
+      <sort id="SQIDnz" />
+      <sort id="Q→Q" />
+    </sorts>
+    <subsorts>
+      <subsort subsort="SQID" supersort="Qℝ" />
+      <subsort subsort="SQDnz" supersort="SQD" />
+      <subsort subsort="SQDnz" supersort="Qnz" />
+      <subsort subsort="SQIDnz" supersort="SQID" />
+      <subsort subsort="SQID" supersort="Q" />
+      <subsort subsort="SQD" supersort="Q" />
+      <subsort subsort="SQIDnz" supersort="Qnz" />
+      <subsort subsort="SQI" supersort="Q" />
+      <subsort subsort="SQD→SQID" supersort="Q→Q" />
+      <subsort subsort="SQD→SQI" supersort="Q→Q" />
+      <subsort subsort="SQInz" supersort="SQI" />
+      <subsort subsort="SQInz" supersort="Qnz" />
+    </subsorts>
+    <vars>
+      <var id="h" sort="SQDnz" />
+      <var id="g" sort="SQD→SQI" />
+      <var id="f" sort="SQD→SQI" />
+      <var id="s" sort="ℝ" />
+    </vars>
+    <ops>
+      <op id="_-">
+        <arity>
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+        </arity>
+        <sort id="SQD→SQI" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQDnz" />
+          <sort id="SQDnz" />
+        </arity>
+        <sort id="ℝnz" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQID" />
+          <sort id="SQIDnz" />
+        </arity>
+        <sort id="ℝ" />
+      </op>
+      <op id="_+">
+        <arity>
+          <var id="q" sort="SQID" />
+          <var id="f" sort="SQD→SQID" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="ℝ" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="SQD" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQID" />
+          <sort id="ℝnz" />
+        </arity>
+        <sort id="SQID" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQDnz" />
+          <sort id="ℝnz" />
+        </arity>
+        <sort id="SQDnz" />
+      </op>
+      <op id="_+">
+        <arity>
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+        </arity>
+        <sort id="SQD→SQI" />
+      </op>
+      <op id="_-">
+        <arity>
+          <var id="q" sort="SQI" />
+          <var id="f" sort="SQD→SQI" />
+        </arity>
+        <sort id="SQD→SQI" />
+      </op>
+      <op id="_&lt;">
+        <arity>
+          <sort id="SQID" />
+          <sort id="SQID" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="Δ">
+        <arity>
+          <var id="f" sort="SQD→SQI" />
+          <var id="h" sort="SQDnz" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_+">
+        <arity>
+          <var id="f" sort="SQD→SQI" />
+          <var id="g" sort="SQD→SQI" />
+        </arity>
+        <sort id="SQD→SQI" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQIDnz" />
+          <sort id="SQIDnz" />
+        </arity>
+        <sort id="ℝnz" />
+      </op>
+      <op id="_-">
+        <arity>
+          <var id="q" sort="SQID" />
+          <var id="f" sort="SQD→SQID" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="ℝnz" />
+          <sort id="SQDnz" />
+        </arity>
+        <sort id="SQDnz" />
+      </op>
+      <op id="_≥">
+        <arity>
+          <sort id="SQID" />
+          <sort id="SQID" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="ℝ" />
+          <sort id="SQI" />
+        </arity>
+        <sort id="SQI" />
+      </op>
+      <op id="_≤">
+        <arity>
+          <sort id="SQD" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_&gt;">
+        <arity>
+          <sort id="SQID" />
+          <sort id="SQID" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_&lt;">
+        <arity>
+          <sort id="SQD" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_-">
+        <arity>
+          <sort id="SQI" />
+          <sort id="SQI" />
+        </arity>
+        <sort id="SQI" />
+      </op>
+      <op id="-">
+        <arity>
+          <var id="f" sort="SQD→SQI" />
+        </arity>
+        <sort id="SQD→SQI" />
+      </op>
+      <op id="-">
+        <arity>
+          <var id="f" sort="SQD→SQID" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="ℝnz" />
+          <sort id="SQIDnz" />
+        </arity>
+        <sort id="SQIDnz" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="ℝ" />
+          <sort id="SQID" />
+        </arity>
+        <sort id="SQID" />
+      </op>
+      <op id="_×">
+        <arity>
+          <sort id="ℝnz" />
+          <sort id="SQInz" />
+        </arity>
+        <sort id="SQInz" />
+      </op>
+      <op id="_+">
+        <arity>
+          <var id="f" sort="SQD→SQID" />
+          <var id="g" sort="SQD→SQID" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_-">
+        <arity>
+          <sort id="SQID" />
+          <sort id="SQID" />
+        </arity>
+        <sort id="SQID" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQInz" />
+          <sort id="SQInz" />
+        </arity>
+        <sort id="ℝnz" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQInz" />
+          <sort id="ℝnz" />
+        </arity>
+        <sort id="SQInz" />
+      </op>
+      <op id="_≤">
+        <arity>
+          <sort id="SQI" />
+          <sort id="SQI" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_&lt;">
+        <arity>
+          <sort id="SQI" />
+          <sort id="SQI" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_-">
+        <arity>
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_×">
+        <arity>
+          <var id="s" sort="ℝ" />
+          <var id="f" sort="SQD→SQID" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_≥">
+        <arity>
+          <sort id="SQI" />
+          <sort id="SQI" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_&gt;">
+        <arity>
+          <sort id="SQI" />
+          <sort id="SQI" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_+">
+        <arity>
+          <sort id="SQID" />
+          <sort id="SQID" />
+        </arity>
+        <sort id="SQID" />
+      </op>
+      <op id="[]">
+        <arity>
+          <sort id="SQD→SQI" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="SQI" />
+      </op>
+      <op id="𝒟">
+        <arity>
+          <sort id="SQD→SQI" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_≥">
+        <arity>
+          <sort id="SQD" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_+">
+        <arity>
+          <sort id="SQI" />
+          <sort id="SQI" />
+        </arity>
+        <sort id="SQI" />
+      </op>
+      <op id="_+">
+        <arity>
+          <var id="q" sort="SQI" />
+          <var id="f" sort="SQD→SQI" />
+        </arity>
+        <sort id="SQD→SQI" />
+      </op>
+      <op id="-">
+        <arity>
+          <sort id="SQD" />
+        </arity>
+        <sort id="SQD" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQI" />
+          <sort id="SQInz" />
+        </arity>
+        <sort id="ℝ" />
+      </op>
+      <op id="-">
+        <arity>
+          <sort id="SQID" />
+        </arity>
+        <sort id="SQID" />
+      </op>
+      <op id="_+">
+        <arity>
+          <sort id="SQD" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="SQD" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQD" />
+          <sort id="SQDnz" />
+        </arity>
+        <sort id="ℝ" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQIDnz" />
+          <sort id="ℝnz" />
+        </arity>
+        <sort id="SQIDnz" />
+      </op>
+      <op id="[]">
+        <arity>
+          <sort id="SQD→SQID" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="SQID" />
+      </op>
+      <op id="_×">
+        <arity>
+          <var id="s" sort="ℝ" />
+          <var id="f" sort="SQD→SQI" />
+        </arity>
+        <sort id="SQD→SQI" />
+      </op>
+      <op id="_&gt;">
+        <arity>
+          <sort id="SQD" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_+">
+        <arity>
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_-">
+        <arity>
+          <sort id="SQD" />
+          <sort id="SQD" />
+        </arity>
+        <sort id="SQD" />
+      </op>
+      <op id="_≤">
+        <arity>
+          <sort id="SQID" />
+          <sort id="SQID" />
+        </arity>
+        <sort id="boolean" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQD" />
+          <sort id="ℝnz" />
+        </arity>
+        <sort id="SQD" />
+      </op>
+      <op id="_÷">
+        <arity>
+          <sort id="SQI" />
+          <sort id="ℝnz" />
+        </arity>
+        <sort id="SQI" />
+      </op>
+      <op id="-">
+        <arity>
+          <sort id="SQI" />
+        </arity>
+        <sort id="SQI" />
+      </op>
+      <op id="_-">
+        <arity>
+          <var id="f" sort="SQD→SQID" />
+          <var id="g" sort="SQD→SQID" />
+        </arity>
+        <sort id="SQD→SQID" />
+      </op>
+      <op id="_-">
+        <arity>
+          <var id="f" sort="SQD→SQI" />
+          <var id="g" sort="SQD→SQI" />
+        </arity>
+        <sort id="SQD→SQI" />
+      </op>
+    </ops>
+    <rules>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_+">
+            <term op="_×">
+              <term-or-var name="f1" />
+              <term-or-var name="sq" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f2" />
+              <term-or-var name="sq" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_+">
+              <term-or-var name="f1" />
+              <term-or-var name="f2" />
+            </term>
+            <term-or-var name="sq" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_-">
+            <term op="_×">
+              <term-or-var name="f1" />
+              <term-or-var name="sq" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f2" />
+              <term-or-var name="sq" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_-">
+              <term-or-var name="f1" />
+              <term-or-var name="f2" />
+            </term>
+            <term-or-var name="sq" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term-or-var name="sq1" />
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="sq2" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_÷">
+            <term op="_÷">
+              <term-or-var name="sq1" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="sq2" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="sq1" />
+            </term>
+            <term-or-var name="sq2" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="f" />
+            <term op="_÷">
+              <term-or-var name="sq1" />
+              <term-or-var name="sq2" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term-or-var name="sq" />
+            <term-or-var name="sq" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <integer value="1" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQI" />
+          <var id="sq2" sort="SQI" />
+          <var id="sq1" sort="SQI" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_+">
+            <term op="_×">
+              <term-or-var name="f1" />
+              <term-or-var name="sq" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f2" />
+              <term-or-var name="sq" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_+">
+              <term-or-var name="f1" />
+              <term-or-var name="f2" />
+            </term>
+            <term-or-var name="sq" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQI" />
+          <var id="sq2" sort="SQI" />
+          <var id="sq1" sort="SQI" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_-">
+            <term op="_×">
+              <term-or-var name="f1" />
+              <term-or-var name="sq" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f2" />
+              <term-or-var name="sq" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_-">
+              <term-or-var name="f1" />
+              <term-or-var name="f2" />
+            </term>
+            <term-or-var name="sq" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQI" />
+          <var id="sq2" sort="SQI" />
+          <var id="sq1" sort="SQI" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term-or-var name="sq1" />
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="sq2" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_÷">
+            <term op="_÷">
+              <term-or-var name="sq1" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="sq2" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQI" />
+          <var id="sq2" sort="SQI" />
+          <var id="sq1" sort="SQI" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="sq1" />
+            </term>
+            <term-or-var name="sq2" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="f" />
+            <term op="_÷">
+              <term-or-var name="sq1" />
+              <term-or-var name="sq2" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQI" />
+          <var id="sq2" sort="SQI" />
+          <var id="sq1" sort="SQI" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term-or-var name="sq" />
+            <term-or-var name="sq" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <integer value="1" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_+">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_-">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_-">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_+">
+              <term-or-var name="f" />
+              <term-or-var name="q" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term-or-var name="q" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_-">
+              <term-or-var name="f" />
+              <term-or-var name="q" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term-or-var name="q" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_+">
+              <term-or-var name="q" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term-or-var name="q" />
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_-">
+              <term-or-var name="q" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_-">
+            <term-or-var name="q" />
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_×">
+              <term-or-var name="s" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="s" />
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQI" />
+          <var id="f" sort="SQD→SQI" />
+          <var id="q" sort="SQI" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="-">
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="-">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_+">
+            <term op="_×">
+              <term-or-var name="f1" />
+              <term-or-var name="sq" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f2" />
+              <term-or-var name="sq" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_+">
+              <term-or-var name="f1" />
+              <term-or-var name="f2" />
+            </term>
+            <term-or-var name="sq" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_-">
+            <term op="_×">
+              <term-or-var name="f1" />
+              <term-or-var name="sq" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f2" />
+              <term-or-var name="sq" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_-">
+              <term-or-var name="f1" />
+              <term-or-var name="f2" />
+            </term>
+            <term-or-var name="sq" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term-or-var name="sq1" />
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="sq2" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_÷">
+            <term op="_÷">
+              <term-or-var name="sq1" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="sq2" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="sq1" />
+            </term>
+            <term-or-var name="sq2" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="f" />
+            <term op="_÷">
+              <term-or-var name="sq1" />
+              <term-or-var name="sq2" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQD" />
+          <var id="sq2" sort="SQD" />
+          <var id="sq1" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term-or-var name="sq" />
+            <term-or-var name="sq" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <integer value="1" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQID" />
+          <var id="sq2" sort="SQID" />
+          <var id="sq1" sort="SQID" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_+">
+            <term op="_×">
+              <term-or-var name="f1" />
+              <term-or-var name="sq" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f2" />
+              <term-or-var name="sq" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_+">
+              <term-or-var name="f1" />
+              <term-or-var name="f2" />
+            </term>
+            <term-or-var name="sq" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQID" />
+          <var id="sq2" sort="SQID" />
+          <var id="sq1" sort="SQID" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_-">
+            <term op="_×">
+              <term-or-var name="f1" />
+              <term-or-var name="sq" />
+            </term>
+            <term op="_×">
+              <term-or-var name="f2" />
+              <term-or-var name="sq" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term op="_-">
+              <term-or-var name="f1" />
+              <term-or-var name="f2" />
+            </term>
+            <term-or-var name="sq" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQID" />
+          <var id="sq2" sort="SQID" />
+          <var id="sq1" sort="SQID" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term-or-var name="sq1" />
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="sq2" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_÷">
+            <term op="_÷">
+              <term-or-var name="sq1" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="sq2" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQID" />
+          <var id="sq2" sort="SQID" />
+          <var id="sq1" sort="SQID" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term op="_×">
+              <term-or-var name="f" />
+              <term-or-var name="sq1" />
+            </term>
+            <term-or-var name="sq2" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="f" />
+            <term op="_÷">
+              <term-or-var name="sq1" />
+              <term-or-var name="sq2" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="sq" sort="SQID" />
+          <var id="sq2" sort="SQID" />
+          <var id="sq1" sort="SQID" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="ℝ" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+          <var id="f1" sort="ℝ" />
+          <var id="f2" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="_÷">
+            <term-or-var name="sq" />
+            <term-or-var name="sq" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <integer value="1" />
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_+">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_-">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_-">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term op="[]">
+              <term-or-var name="g" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_+">
+              <term-or-var name="f" />
+              <term-or-var name="q" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term-or-var name="q" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_-">
+              <term-or-var name="f" />
+              <term-or-var name="q" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+            <term-or-var name="q" />
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_+">
+              <term-or-var name="q" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term-or-var name="q" />
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_-">
+              <term-or-var name="q" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_-">
+            <term-or-var name="q" />
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="_×">
+              <term-or-var name="s" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="s" />
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars>
+          <var id="x" sort="SQD" />
+          <var id="g" sort="SQD→SQID" />
+          <var id="f" sort="SQD→SQID" />
+          <var id="q" sort="SQID" />
+          <var id="s" sort="ℝ" />
+        </vars>
+        <pattern>
+          <term op="[]">
+            <term op="-">
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="x" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="-">
+            <term op="[]">
+              <term-or-var name="f" />
+              <term-or-var name="x" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="𝒟">
+            <term op="_+">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="𝒟">
+              <term-or-var name="f" />
+            </term>
+            <term op="𝒟">
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="𝒟">
+            <term op="_-">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_-">
+            <term op="𝒟">
+              <term-or-var name="f" />
+            </term>
+            <term op="𝒟">
+              <term-or-var name="g" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="𝒟">
+            <term op="_×">
+              <term-or-var name="s" />
+              <term-or-var name="f" />
+            </term>
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="s" />
+            <term op="𝒟">
+              <term-or-var name="f" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="Δ">
+            <term op="_+">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="h" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_+">
+            <term op="Δ">
+              <term-or-var name="f" />
+              <term-or-var name="h" />
+            </term>
+            <term op="Δ">
+              <term-or-var name="g" />
+              <term-or-var name="h" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="Δ">
+            <term op="_-">
+              <term-or-var name="f" />
+              <term-or-var name="g" />
+            </term>
+            <term-or-var name="h" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_-">
+            <term op="Δ">
+              <term-or-var name="f" />
+              <term-or-var name="h" />
+            </term>
+            <term op="Δ">
+              <term-or-var name="g" />
+              <term-or-var name="h" />
+            </term>
+          </term>
+        </replacement>
+      </rule>
+      <rule>
+        <vars />
+        <pattern>
+          <term op="Δ">
+            <term op="_×">
+              <term-or-var name="s" />
+              <term-or-var name="f" />
+            </term>
+            <term-or-var name="h" />
+          </term>
+        </pattern>
+        <condition />
+        <replacement>
+          <term op="_×">
+            <term-or-var name="s" />
+            <term op="Δ">
+              <term-or-var name="f" />
+              <term-or-var name="h" />
             </term>
           </term>
         </replacement>

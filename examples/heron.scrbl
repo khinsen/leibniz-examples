@@ -68,3 +68,5 @@ We can use this version with floating-point arguments:
 Again we see that decreasing @term{ε} leads to better approximations of @term{√(2.)}.
 The deviation is always smaller than the prescribed tolerance.
 }
+
+@;signature-graphs["heron.sig"]
