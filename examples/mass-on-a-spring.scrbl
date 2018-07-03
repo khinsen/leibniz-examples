@@ -23,7 +23,7 @@ where @op{k : force-constant} characterizes the elastic properties
 of the spring.
 
 @centered[
-  @image["Mass_spring.svg.png"]{Drawing}
+  @image["https://github.com/khinsen/leibniz-examples/raw/master/examples/Mass_spring.svg.png"]{Drawing}
   @linebreak[]
   @hyperlink["https://commons.wikimedia.org/wiki/File:Mass_spring.svg"]{(Source: Wikimedia Commons)}
 ]
